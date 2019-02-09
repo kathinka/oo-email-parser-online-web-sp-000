@@ -5,16 +5,18 @@
 
 
 class EmailParser
-  @@email_list = []
+  #@@email_list = []
+
 
   def initialize(emails)
     @emails = emails
   end
 
   def parse
-    split_csv = @emails.split(/[ ,]/)
-    split_csv.reject! {|string| string.nil? || string.strip.empty? }
-    split_csv.uniq!
-    split_csv.each {|email| @@email_list << email}
+    #split_csv = @emails.split(/[ ,]/)
+    #split_csv.reject! {|string| string.nil? || string.strip.empty? }
+    #split_csv.uniq!
+    #split_csv.each {|email| @@email_list << email}
+    emails.split(/, | /).uniq
   end
 end
